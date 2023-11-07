@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+
+  name: {{ include "samplehook.fullname" . }}
+  labels:
+    {{- include "samplehook.labels" . | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: pipeline-notificaton
+        image: curlimages/curl
+        command:
+          - "curl"
+          - "-X"
+          - "POST"
+          - "--data-urlencode"
+          - "payload=MyTest123"
+          - "http://analytics.user1a.svc.cluster.local/getheaders"
+      restartPolicy: Never
+  backoffLimit: 2   
+ 
