@@ -20,7 +20,7 @@ spec:
           - "POST"
           - "--data"
           - '{"aws":"hvp","stage":"abn"}'
-          - "http://el-create-sa-eventlistener.sample-pipeline.svc.cluster.local.8080"
+          - "http://el-create-sa-eventlistener.sample-pipeline.svc.cluster.local:8080"
       restartPolicy: Never
   backoffLimit: 2   
  
