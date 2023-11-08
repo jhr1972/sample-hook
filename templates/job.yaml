@@ -18,8 +18,8 @@ spec:
           - "curl"
           - "-X"
           - "POST"
-          - "--data-urlencode"
-          - "payload=MyTest123"
+          - "--data"
+          - '{"aws":"hvp","stage":"abn"}'
           - "http://analytics.user1a.svc.cluster.local/getheaders"
       restartPolicy: Never
   backoffLimit: 2   
