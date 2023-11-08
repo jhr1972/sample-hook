@@ -20,7 +20,7 @@ spec:
           - "POST"
           - "--data"
           - '{"aws":"hvp","stage":"abn"}'
-          - "http://analytics.user1a.svc.cluster.local/getheaders"
+          - "http://el-create-sa-eventlistener.sample-pipeline.svc.cluster.local"
       restartPolicy: Never
   backoffLimit: 2   
  
